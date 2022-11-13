@@ -5,7 +5,7 @@ position: 1
 ---
 
 * Shopping
-* Eats
+* Eats and Drinks
 * Lodging
 * Event Space
 * Plaza
