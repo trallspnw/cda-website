@@ -1,1 +1,9 @@
-<p>This is the nav</p>
+<h3>{{ site.title }}</h3>
+<ul>    
+    {% assign sorted_pages = site.pages | where:'path' contains 'about-the-cda.markdown','true' %}
+    {% for page in sorted_pages %}
+        <li>
+            {{ page.title }} + {{ page.dir }} + {{ page.path }} + {{ layout.tags }}
+        </li>
+    {% endfor %}
+</ul>
