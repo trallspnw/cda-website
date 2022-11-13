@@ -1,15 +1,15 @@
 {% assign page_labels = page.url | split: '/' %}
 <ul>
-    <li class="nav_home">
+    <li class="nav-home">
         <a href="/">{{ site.title }}</a>
     </li>
     {% for nav_page in site.navigation_pages %}
-        {% assign labels = nav_page.url | split: '/' %}
-        {% if labels.size == 2 %}
-            {% assign tab = labels[1] %}
+        {% assign nav_labels = nav_page.url | split: '/' %}
+        {% if nav_labels.size == 2 %}
+            {% assign tab = nav_labels[1] %}
             <li 
                 {% if page_labels[1] == tab %} 
-                    class="active_tab" 
+                    class="active-tab" 
                 {% endif %}
             >
                 <a href="{{ nav_page.url }}">{{ nav_page.title }}</a>
@@ -19,7 +19,7 @@
                         {% if nested_labels[1] == tab and nested_labels.size == 3 %}
                             <li
                                 {% if page_labels == nested_labels %}
-                                    class="active_nav"
+                                    class="active-nav"
                                 {% endif %}
                             >
                                 <a href="{{ nested_page.url }}">{{ nested_page.title }}</a>

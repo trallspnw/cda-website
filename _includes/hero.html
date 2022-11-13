@@ -1,0 +1,28 @@
+<div class="hero-container">
+    {% assign first_hero_url = site.hero[0].url %}
+    {% for hero_item in site.hero %}
+        {% assign hero_labels = hero_item.url | split: '/' %}
+        {% if hero_labels.size == 3 %}
+            {% assign item_label = hero_labels[2] %}
+            <div 
+                class="hero-item 
+                    {% if hero_item.url == first_hero_url %}
+                        active-hero-item
+                    {% endif %}
+                "
+            >
+                {{ hero_item.content }}
+                {% for hero_item_nested_content in site.hero %}
+                    {% assign nested_content_labels = hero_item_nested_content.url | split: '/' %}
+                    {% if nested_content_labels[2] == item_label and nested_content_labels.size == 4 %}
+                        <div 
+                            class="hero-item-content hero-item-content-align-{{ hero_item_nested_content.alignment }}"
+                        >
+                            {{ hero_item_nested_content.content }}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endfor %}
+</div>
