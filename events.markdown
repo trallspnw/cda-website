@@ -1,7 +1,11 @@
 ---
-title: Events
+title: Events/Calendar
 date: 2022-11-13 01:33:00 Z
 position: 4
 ---
 
-This is the Events/Calendar page.
+* Parades
+* Music in the Park
+* Plaza re-opening
+* Block Parties
+* Calendar
