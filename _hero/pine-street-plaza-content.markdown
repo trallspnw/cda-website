@@ -1,6 +1,7 @@
 ---
 title: Pine Street Plaza Content
 date: 2022-11-13 22:00:00 Z
+alignment: right
 ---
 
 \## Pine Street Plaza
