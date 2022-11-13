@@ -1,7 +1,9 @@
 ---
-title: About
+title: About the CDA
 date: 2022-11-13 01:30:00 Z
 position: 0
 ---
 
-This is the About the CDA page
+* Main Street
+* Sponsor
+* Who we are
