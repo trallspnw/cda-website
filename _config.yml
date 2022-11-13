@@ -11,6 +11,7 @@ collections:
   hero:
     title: Hero
     output: true
+    alignment: middle
   navigation_pages:
     title: Navigation Pages
     output: true
