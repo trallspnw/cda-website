@@ -25,6 +25,7 @@ description: The Centralia Downtown Association is your family's best source for
   a great stop for your  next adventure!
 baseurl: "/cda-website"
 url: https://trallspnw.github.io
+permalink: /:slug
 twitter_username: jekyllrb
 github_username: jekyll
 markdown: kramdown
