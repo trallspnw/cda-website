@@ -17,6 +17,11 @@ collections:
   uploads:
     title: Uploads
     output: true
+defaults:
+- scope:
+    path: ''
+  values:
+    layout: default
 email: your-email@example.com
 description: The Centralia Downtown Association is your family's best source for things
   to do in  Centralia WA! Find resources for visitors in Centralia and links to great
@@ -32,9 +37,3 @@ markdown: kramdown
 theme: minima
 plugins:
 - jekyll-feed
-defaults:
-  -
-    scope:
-      path: "" # an empty string here means all files in the project
-    values:
-      layout: "default"
