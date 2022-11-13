@@ -8,6 +8,9 @@ collections:
   cards:
     title: Cards
     output: true
+  featured:
+    title: Featured
+    output: true
   hero:
     title: Hero
     output: true
