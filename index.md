@@ -1,7 +1,7 @@
 ---
 title: Homepage
 permalink: "/"
-position: 2
+position: 1
 layout: home
 ---
 
