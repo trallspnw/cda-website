@@ -30,9 +30,10 @@ defaults:
   values:
     layout: default
 - scope:
-    type: 'hero'
+    path: ''
+    type: hero
   values:
-    layout: 'partial'
+    layout: partial
     alignment: center
 email: your-email@example.com
 description: The Centralia Downtown Association is your family's best source for things
