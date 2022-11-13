@@ -24,7 +24,7 @@ description: The Centralia Downtown Association is your family's best source for
   antique shopping  and local arts. We are halfway between Portland and Seattle, and
   a great stop for your  next adventure!
 baseurl: "/cda-website"
-url: https://trallspnw.github.io
+url: https://cda.rallspnw.com
 permalink: "/:slug"
 twitter_username: jekyllrb
 github_username: jekyll
@@ -32,3 +32,9 @@ markdown: kramdown
 theme: minima
 plugins:
 - jekyll-feed
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      layout: "default"
