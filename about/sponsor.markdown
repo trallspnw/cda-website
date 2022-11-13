@@ -6,6 +6,6 @@ position: 1
 
 * Parades
 * Flower Baskets
-* Spring Clean UP
+* Spring Clean Up
 * Plaza
 * Music in the Park
