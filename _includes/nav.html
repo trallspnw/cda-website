@@ -1,9 +1,33 @@
-<h3>{{ site.title }}</h3>
-<ul>    
-    {% assign sorted_pages = site.pages | where:'path' contains 'about-the-cda.markdown','true' %}
-    {% for page in sorted_pages %}
-        <li>
-            {{ page.title }} + {{ page.dir }} + {{ page.path }} + {{ layout.tags }}
-        </li>
+{% assign page_labels = page.url | split: '/' %}
+<ul>
+    <li class="nav_home">
+        <a href="/">{{ site.title }}</a>
+    </li>
+    {% for nav_page in site.navigation_pages %}
+        {% assign labels = nav_page.url | split: '/' %}
+        {% if labels.size == 2 %}
+            {% assign tab = labels[1] %}
+            <li 
+                {% if page_labels[1] == tab %} 
+                    class="active_tab" 
+                {% endif %}
+            >
+                <a href="{{ nav_page.url }}">{{ nav_page.title }}</a>
+                <ul>
+                    {% for nested_page in site.navigation_pages %}
+                        {% assign nested_labels = nested_page.url | split: '/' %}
+                        {% if nested_labels[1] == tab and nested_labels.size == 3 %}
+                            <li
+                                {% if page_labels == nested_labels %}
+                                    class="active_nav"
+                                {% endif %}
+                            >
+                                <a href="{{ nested_page.url }}">{{ nested_page.title }}</a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </li>
+        {% endif %}
     {% endfor %}
 </ul>
