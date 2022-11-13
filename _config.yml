@@ -14,7 +14,7 @@ collections:
   navigation_pages:
     title: Navigation Pages
     output: true
-    permalink: "/:title"
+    permalink: "/:path/title"
   posts:
     title: Posts
     output: true
