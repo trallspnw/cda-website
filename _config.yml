@@ -5,6 +5,9 @@ collections:
   banner:
     title: Banner
     output: true
+  cards:
+    title: Cards
+    output: true
   posts:
     title: Posts
     output: true
