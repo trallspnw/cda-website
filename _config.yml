@@ -33,7 +33,7 @@ defaults:
     path: ''
     type: banner
   values:
-    layout: partial    
+    layout: partial
 - scope:
     path: ''
     type: hero
@@ -49,7 +49,7 @@ defaults:
     path: ''
     type: cards
   values:
-    layout: partial        
+    layout: partial
 email: your-email@example.com
 description: The Centralia Downtown Association is your family's best source for things
   to do in  Centralia WA! Find resources for visitors in Centralia and links to great
