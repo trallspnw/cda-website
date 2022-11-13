@@ -11,7 +11,7 @@ collections:
   hero:
     title: Hero
     output: true
-  navingation_pages:
+  navigation_pages:
     title: Navigation Pages
     output: true
   posts:
