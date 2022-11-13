@@ -14,8 +14,8 @@ description: The Centralia Downtown Association is your family's best source for
   resources in  Lewis County. Historic downtown Centralia has charming restaurants,
   antique shopping  and local arts. We are halfway between Portland and Seattle, and
   a great stop for your  next adventure!
-baseurl: ''
-url: ''
+baseurl: '/cda-website'
+url: 'https://trallspnw.github.io'
 twitter_username: jekyllrb
 github_username: jekyll
 markdown: kramdown
