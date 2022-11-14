@@ -1,33 +1,49 @@
 {% assign page_labels = page.url | split: '/' %}
-<ul>
-    <li class="nav-home">
-        <a href="/">{{ site.title }}</a>
-    </li>
-    {% for nav_page in site.navigation_pages %}
-        {% assign nav_labels = nav_page.url | split: '/' %}
-        {% if nav_labels.size == 2 %}
-            {% assign tab = nav_labels[1] %}
-            <li 
-                {% if page_labels[1] == tab %} 
-                    class="active-tab" 
-                {% endif %}
-            >
-                <a href="{{ nav_page.url }}">{{ nav_page.title }}</a>
-                <ul>
-                    {% for nested_page in site.navigation_pages %}
-                        {% assign nested_labels = nested_page.url | split: '/' %}
-                        {% if nested_labels[1] == tab and nested_labels.size == 3 %}
-                            <li
-                                {% if page_labels == nested_labels %}
-                                    class="active-nav"
+<header id="navbar">
+    <nav class="navbar-container container">
+        <a href="/" class="home-link">
+            <div class="navbar-logo"></div>
+            {{ site.title }}
+        </a>
+        <button type="button" id="navbar-toggle" aria-controls="navbar-menu" aria-label="Toggle menu" aria-expanded="false">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <div id="navbar-menu" aria-labelledby="navbar-toggle">
+            <ul class="navbar-links">
+                {% for nav_page in site.navigation_pages %}
+                    {% assign nav_labels = nav_page.url | split: '/' %}
+                    {% if nav_labels.size == 2 %}
+                        {% assign tab = nav_labels[1] %}
+                        <li 
+                            class="navbar-item 
+                                {% if page_labels[1] == tab %} 
+                                    active-tab
                                 {% endif %}
-                            >
-                                <a href="{{ nested_page.url }}">{{ nested_page.title }}</a>
-                            </li>
-                        {% endif %}
-                    {% endfor %}
-                </ul>
-            </li>
-        {% endif %}
-    {% endfor %}
-</ul>
+                            "
+                        >
+                            <a class="navbar-link" href="{{ nav_page.url }}">{{ nav_page.title }}</a>
+                            <ul class="navbar-sub-nav">
+                                {% for nested_page in site.navigation_pages %}
+                                    {% assign nested_labels = nested_page.url | split: '/' %}
+                                    {% if nested_labels[1] == tab and nested_labels.size == 3 %}
+                                        <li
+                                            class="navbar-sub-item 
+                                                {% if page_labels == nested_labels %}
+                                                    active-nav
+                                                {% endif %}
+                                            "
+                                        >
+                                            <a class="navbar-sub-link" href="{{ nested_page.url }}">{{ nested_page.title }}</a>
+                                        </li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+    </nav>
+</header>

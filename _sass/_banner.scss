@@ -1,6 +1,8 @@
 .banner-item {
     display: none;
-    position: relative;
+    position: fixed;
+    top: 64px;
+    width: 100%;
     transition: background-color 3s;
 
     &.active {

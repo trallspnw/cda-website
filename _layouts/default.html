@@ -10,11 +10,11 @@
     </head>
     <body>
         <section>
+            {% include nav.html %}
+        </section>
+        <section>
             {% include banner.html %}
         </section>
-        <nav>
-            {% include nav.html %}
-        </nav>
         <section>
             {{ content }}
         </section>
