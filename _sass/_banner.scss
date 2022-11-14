@@ -1,0 +1,27 @@
+.banner-item {
+    display: none;
+    position: relative;
+    transition: background-color 3s;
+
+    &.active {
+        background-color: gray;
+
+        &.alert {
+            background-color: orange;
+        }
+    }
+
+    p {
+        margin: 0;
+    }
+
+    .close-banner {
+        position: absolute;
+        top: 50%;
+        right: 1%;
+        transform: translateY(-50%);
+        background-color: transparent;
+        border: none;
+
+    }
+}
