@@ -1,5 +1,5 @@
 ---
-title: About the CDA
+title: About
 date: 2022-11-13 01:30:00 Z
 position: 0
 ---
