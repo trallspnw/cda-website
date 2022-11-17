@@ -5,10 +5,10 @@ collections:
   banners:
     title: Banners
     output: true
-  homepage_content:
+  homepage-content:
     title: Homepage Content
     output: true
-  page_content:
+  page-content:
     title: Page Content
     output: true
     permalink: "/:path"
