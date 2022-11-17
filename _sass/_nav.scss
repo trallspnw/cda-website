@@ -1,55 +1,36 @@
+@import "constants";
+
 .nav {
     background: rgba(255,255,255,0.95);
-    position: fixed;
-    display: block;
     box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-    left: 0;
-    right: 0;
-    top: 0;
-    z-index: 10;
     border-top: 2px solid #EE3B24;
-    padding: 0;
-    margin: 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
     height: 92px;
-    transform: translateZ(0);
-    -ms-transform: translateZ(0);
-    -webkit-transform: translateZ(0);
+    width: 100%;
     -moz-transition: all 0.3s ease-in-out;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
-    box-sizing: inherit;
 }
 
 .nav-container {
-    width: 1170px;
+    display: grid;
+    grid-template-columns: 30% auto 90px;
+    width: $max-width;
+    padding: 0 8px;
     margin: 0 auto;
-    box-sizing: inherit;
 }
 
 .nav-home {
-    float: left;
-    width: 30%;
     padding: 15px 0;
-    box-sizing: inherit;
-}
-
-.nav-menu {
-    float: right;
-    width: 70%;
-    display: block;
-    margin: 0;
-    box-sizing: inherit;
 }
 
 .nav-items {
     display: block;
     float: right;
-    box-sizing: inherit;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -58,8 +39,6 @@
 .nav-item {
     float: left;
     position: relative;
-    box-sizing: inherit;
-    z-index: 5;
 }
 
 .nav-link {
@@ -71,33 +50,28 @@
     font-size: 14px;
     font-weight: 600;
     line-height: 90px;
-    position: relative;
     transition: all 0.3s ease-in-out;
     -moz-transition: all 0.3s ease-in-out;
     -webkit-transition: all 0.3s ease-in-out;
-    background-color: transparent;
-    box-sizing: inherit;
 }
 
-.nav-sub-intems {
+.nav-sub-items {
     display: none;
     position: absolute;
     left: 0;
-    top: 100% ;
+    top: 100%;
     background: #F6F6F6;
     min-width: 240px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.2);
     list-style: none;
     margin: 0;
     padding: 0;
-    box-sizing: inherit;
 }
 
 .nav-sub-item {
     float: none;
     border-bottom: 1px solid #F0F0F0;
     position: relative;
-    box-sizing: inherit;
 }
 
 .nav-sub-link {
@@ -114,5 +88,16 @@
     -moz-transition: all 0.3s ease-in-out;
     -webkit-transition: all 0.3s ease-in-out;
     background-color: transparent;
-    box-sizing: inherit;
+}
+
+.icon-bar {
+    position: relative;
+    height: 2px;
+    width: 32px;
+    margin: 0 auto;
+    background: #EE3B24;
+    display: block;
+    top: 50%;
+    margin-top: -1px;
+    box-shadow: 0 10px 0px 0px #EE3B24, 0 -10px 0px 0px #EE3B24;
 }

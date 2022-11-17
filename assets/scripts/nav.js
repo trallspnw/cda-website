@@ -1,11 +1,11 @@
 export class Nav {
     async start() {
-        $('.navbar-item').hover(
+        $('.nav-item').hover(
             function () {
-                $(this).find('.navbar-sub-nav').show();
+                $(this).find('.nav-sub-items').show();
             },
             function () {
-                $(this).find('.navbar-sub-nav').hide();
+                $(this).find('.nav-sub-items').hide();
             });
     }
 }
