@@ -1,5 +1,14 @@
 @import "banner";
+@import "cards";
+@import "collapsed_nav";
+@import "featured";
+@import "footer";
+@import "header";
+@import "hero";
+@import "home_content";
 @import "nav";
+
+$max-width: 1170px;
 
 body {
     background-color: white;
@@ -13,6 +22,7 @@ body {
 
 .main-container {
     display: grid;
-    max-width: 1170px;
+    grid-template-columns: 100%;
+    max-width: $max-width;
     margin: 0 auto;
 }

@@ -1,4 +1,4 @@
-.navbar {
+.nav {
     background: rgba(255,255,255,0.95);
     position: fixed;
     display: block;
@@ -25,20 +25,20 @@
     box-sizing: inherit;
 }
 
-.navbar-container {
+.nav-container {
     width: 1170px;
     margin: 0 auto;
     box-sizing: inherit;
 }
 
-.home-link-container {
+.nav-home {
     float: left;
     width: 30%;
     padding: 15px 0;
     box-sizing: inherit;
 }
 
-.navbar-menu {
+.nav-menu {
     float: right;
     width: 70%;
     display: block;
@@ -46,7 +46,7 @@
     box-sizing: inherit;
 }
 
-.navbar-links {
+.nav-items {
     display: block;
     float: right;
     box-sizing: inherit;
@@ -55,14 +55,14 @@
     padding: 0;
 }
 
-.navbar-item {
+.nav-item {
     float: left;
     position: relative;
     box-sizing: inherit;
     z-index: 5;
 }
 
-.navbar-link {
+.nav-link {
     color: #111;
     display: block;
     text-decoration: none;
@@ -79,7 +79,7 @@
     box-sizing: inherit;
 }
 
-.navbar-sub-nav {
+.nav-sub-intems {
     display: none;
     position: absolute;
     left: 0;
@@ -93,14 +93,14 @@
     box-sizing: inherit;
 }
 
-.navbar-sub-item {
+.nav-sub-item {
     float: none;
     border-bottom: 1px solid #F0F0F0;
     position: relative;
     box-sizing: inherit;
 }
 
-.navbar-sub-link {
+.nav-sub-link {
     text-transform: none;
     font-weight: 400;
     color: #444;
