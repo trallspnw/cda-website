@@ -2,6 +2,9 @@
 title: Centralia Downtown Association - Meet me in Centralia!
 timezone: UTC
 collections:
+  banners:
+    title: Banners
+    output: true
   homepage_content:
     title: Navigation Menu
     output: true
@@ -9,9 +12,6 @@ collections:
     title: Page Content
     output: true
     permalink: "/:path"
-  banners:
-    title: Banners
-    output: true
   posts:
     title: Posts
     output: true
@@ -29,7 +29,7 @@ defaults:
   values:
     layout: main
 - scope:
-    path: '/'
+    path: "/"
   values:
     layout: main
 email: your-email@example.com
