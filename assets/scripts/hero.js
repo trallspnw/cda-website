@@ -1,10 +1,18 @@
 export const ROTATION_TIME = 5000;
+export const OVERLAP_TIME = 1000;
+
 
 export class Hero {
     constructor() {
         this.heroElements = $('.hero-item').toArray();
-        this.heroSlides = this.heroElements.map(element => new HeroSlide(element));
-        this.started = false;
+        this.heroSlides = this.heroElements
+            .map(element => new HeroSlide(element, element == this.heroElements[0]));
+
+        for (let i = 0; i < this.heroSlides.length; i++) {
+            this.heroSlides[i].nextSlide = (i == this.heroSlides.length -1) ?
+                this.heroSlides[0] :
+                this.heroSlides[i + 1];
+        }
     }
 
     async start() {
@@ -19,10 +27,8 @@ export class Hero {
 
         while(true) {
             for (const slide of this.heroSlides) {
-                slide.activate(this.started);
-                this.started = true;
-                await new Promise(done => setTimeout(() => done(), 5000)); 
-                slide.deactivate();
+                slide.runSlide();
+                await new Promise(done => setTimeout(() => done(), ROTATION_TIME)); 
             }
         }
     }
@@ -33,25 +39,39 @@ export class Hero {
 }
 
 export class HeroSlide {
-    constructor(element) {
-        this.element = element
+    constructor(element, isFirst) {
+        this.element = element;
+        this.isFirst = isFirst;
         this.imageUrl = $(element).find('.hero-image-url')[0].innerText;
-        $(element).css('background-image', 'url("' + this.imageUrl + '")');
+        this.isPrepared = false;
+        this.nextSlide;
     }
 
-    async activate(started) {
-        if (!started) {
-            $(this.element).show();
-            $(this.element).css('z-index', '-1');
+    async runSlide() {
+        if (this.isFirst && !this.isPrepared) {
+            this.prepareSlide()
+            $(this.element).css('z-index', '1');
+        } else {
+            if ($(this.element).is(":visible")) {
+                $(this.element).hide();
+            }
+            $(this.element).css('z-index', '1');
+            $(this.element).fadeIn();
         }
-        $(this.element).css('z-index', '1');
-        $(this.element).fadeIn();
-        await new Promise(done => setTimeout(() => done(), 5000/2)); 
+        this.nextSlide.prepareSlide();
+        await new Promise(done => setTimeout(() => done(), ROTATION_TIME/2)); 
         $(this.element).css('z-index', '-1');
+        await new Promise(done => setTimeout(() => done(), ROTATION_TIME/2 + OVERLAP_TIME)); 
+        $(this.element).hide();
     }
 
-    async deactivate() {
-        await new Promise(done => setTimeout(() => done(), 5000/2)); 
-        $(this.element).hide();
+    async prepareSlide() {
+        if (this.isPrepared) {
+            return;
+        }
+        $(this.element).css('background-image', 'url("' + this.imageUrl + '")');
+        $(this.element).css('z-index', '-2');
+        $(this.element).show();
+        this.isPrepared = true;
     }
 }
