@@ -1,4 +1,5 @@
 {% assign page_labels = page.url | split: '/' %}
+{% assign pages = site.page-content | where: 'type', 'page' %}
 
 <div class="nav">
     <div class="nav-container">
@@ -10,36 +11,36 @@
         <div class="nav-menu">
             <div class="nav-menu-container">
                 <ul class="nav-items">
-                    {% for nav_page in site.page-content %}
-                        {% assign nav_labels = nav_page.url | split: '/' %}
-                        {% if nav_labels.size == 2 %}
-                            {% assign tab = nav_labels[1] %}
-                            <li 
-                                class="nav-item 
-                                    {% if page_labels[1] == tab %} 
-                                        active-item
-                                    {% endif %}
-                                "
-                            >
-                                <a class="nav-link" href="{{ nav_page.url }}">{{ nav_page.title }}</a>
-                                <ul class="nav-sub-items">
-                                    {% for nested_page in site.page-content %}
-                                        {% assign nested_labels = nested_page.url | split: '/' %}
-                                        {% if nested_labels[1] == tab and nested_labels.size == 3 %}
-                                            <li
-                                                class="nav-sub-item 
-                                                    {% if page_labels == nested_labels %}
-                                                        active-sub-item
-                                                    {% endif %}
-                                                "
-                                            >
-                                                <a class="nav-sub-link" href="{{ nested_page.url }}">{{ nested_page.title }}</a>
-                                            </li>
+                    {% for nav_page in pages %}
+                            {% assign nav_labels = nav_page.url | split: '/' %}
+                            {% if nav_labels.size == 2 %}
+                                {% assign tab = nav_labels[1] %}
+                                <li 
+                                    class="nav-item 
+                                        {% if page_labels[1] == tab %} 
+                                            active-item
                                         {% endif %}
-                                    {% endfor %}
-                                </ul>
-                            </li>
-                        {% endif %}
+                                    "
+                                >
+                                    <a class="nav-link" href="{{ nav_page.url }}">{{ nav_page.title }}</a>
+                                    <ul class="nav-sub-items">
+                                        {% for nested_page in pages %}
+                                            {% assign nested_labels = nested_page.url | split: '/' %}
+                                            {% if nested_labels[1] == tab and nested_labels.size == 3 %}
+                                                <li
+                                                    class="nav-sub-item 
+                                                        {% if page_labels == nested_labels %}
+                                                            active-sub-item
+                                                        {% endif %}
+                                                    "
+                                                >
+                                                    <a class="nav-sub-link" href="{{ nested_page.url }}">{{ nested_page.title }}</a>
+                                                </li>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </ul>
+                                </li>
+                            {% endif %}
                     {% endfor %}
                 </ul>
             </div>
