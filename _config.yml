@@ -14,8 +14,8 @@ collections:
   homepage-hero:
     title: Homepage Hero
     output: true
-  navigation_pages:
-    title: Navigation Pages
+  navigation_menu:
+    title: Navigation Menu
     output: true
     permalink: "/:path"
   posts:
