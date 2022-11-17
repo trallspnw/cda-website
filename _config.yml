@@ -6,7 +6,7 @@ collections:
     title: Banners
     output: true
   homepage_content:
-    title: Navigation Menu
+    title: Homepage Content
     output: true
   page_content:
     title: Page Content
