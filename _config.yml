@@ -8,9 +8,6 @@ collections:
   content-blocks:
     title: Content Blocks
     output: true
-  homepage-cards:
-    title: Homepage Cards
-    output: true
   homepage-featured:
     title: Homepage Featured
     output: true
