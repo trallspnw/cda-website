@@ -2,8 +2,17 @@
 @import "nav";
 
 body {
+    background-color: white;
     color: #444;
+    margin: 0;
+    padding: 0 8px;
     font-size: 15px;
     line-height: 1.8;
     font-family: 'Open Sans', sans-serif;
+}
+
+.main-container {
+    display: grid;
+    max-width: 1170px;
+    margin: 0 auto;
 }

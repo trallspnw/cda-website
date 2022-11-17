@@ -22,16 +22,7 @@ defaults:
 - scope:
     path: ''
   values:
-    layout: minimal
-- scope:
-    path: ''
-    type: page_content
-  values:
-    layout: main
-- scope:
-    path: "/"
-  values:
-    layout: main
+    layout: default
 email: your-email@example.com
 description: The Centralia Downtown Association is your family's best source for things
   to do in  Centralia WA! Find resources for visitors in Centralia and links to great

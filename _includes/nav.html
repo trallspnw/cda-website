@@ -10,7 +10,7 @@
         <div class="nav-menu">
             <div class="nav-menu-container">
                 <ul class="nav-items">
-                    {% for nav_page in site.navigation_pages %}
+                    {% for nav_page in site.page-content %}
                         {% assign nav_labels = nav_page.url | split: '/' %}
                         {% if nav_labels.size == 2 %}
                             {% assign tab = nav_labels[1] %}
@@ -23,7 +23,7 @@
                             >
                                 <a class="nav-link" href="{{ nav_page.url }}">{{ nav_page.title }}</a>
                                 <ul class="nav-sub-items">
-                                    {% for nested_page in site.navigation_pages %}
+                                    {% for nested_page in site.page-content %}
                                         {% assign nested_labels = nested_page.url | split: '/' %}
                                         {% if nested_labels[1] == tab and nested_labels.size == 3 %}
                                             <li
