@@ -15,6 +15,9 @@ collections:
   posts:
     title: Posts
     output: true
+  test-collection:
+    title: Test Collection
+    output: true
   uploads:
     title: Uploads
     output: true
