@@ -1,0 +1,18 @@
+on:
+  issues:
+    types:
+      - opened
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fedth-depth: 0
+      - name: Publish
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          
+          git pull --rebase
