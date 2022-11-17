@@ -1,12 +1,14 @@
-<div class="cards-container">
-    {% for card in site.cards %}
-        <div class="card-item">
-            <div class="card-image">
-                {{ card.content }}
+<div class="cards-area">
+    <div class="cards-container">
+        {% for card in site.cards %}
+            <div class="card-item">
+                <div class="card-image">
+                    {{ card.content }}
+                </div>
+                <div class="card-title">
+                    {{ card.title }}
+                </div>
             </div>
-            <div class="card-title">
-                {{ card.title }}
-            </div>
-        </div>
-    {% endfor %}
+        {% endfor %}
+    </div>
 </div>

@@ -9,17 +9,14 @@
         {% seo %}
     </head>
     <body>
-        <section>
-            {% include banner.html %}
-        </section>
-        <section>
-            {% include nav.html %}
-        </section>
-        <section>
+        <div class="main-conatiner">
+            
+            {% include header.html %}
+        
             {{ content }}
-        </section>
-        <footer>
+
             {% include footer.html %}
-        </footer>
+        
+        </div>
     </body>
 </html>

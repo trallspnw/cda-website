@@ -2,16 +2,16 @@
 title: Centralia Downtown Association - Meet me in Centralia!
 timezone: UTC
 collections:
+  homepage_content:
+    title: Navigation Menu
+    output: true
+  page_content:
+    title: Page Content
+    output: true
+    permalink: "/:path"
   banners:
     title: Banners
     output: true
-  content-blocks:
-    title: Content Blocks
-    output: true
-  navigation_menu:
-    title: Navigation Menu
-    output: true
-    permalink: "/:path"
   posts:
     title: Posts
     output: true
@@ -22,28 +22,16 @@ defaults:
 - scope:
     path: ''
   values:
-    layout: default
+    layout: minimal
 - scope:
     path: ''
-    type: banner
+    type: page_content
   values:
-    layout: partial
+    layout: main
 - scope:
-    path: ''
-    type: hero
+    path: '/'
   values:
-    layout: partial
-    alignment: center
-- scope:
-    path: ''
-    type: featured
-  values:
-    layout: partial
-- scope:
-    path: ''
-    type: cards
-  values:
-    layout: partial
+    layout: main
 email: your-email@example.com
 description: The Centralia Downtown Association is your family's best source for things
   to do in  Centralia WA! Find resources for visitors in Centralia and links to great

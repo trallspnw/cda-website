@@ -1,10 +1,16 @@
-<div class="banner-container">
-    {% for banner in site.banner %}
-        <div class="banner-item">
-            <div class="banner-item-content">
-                {{ banner.content }}
-                <button class="close-banner">&times;</button>
+<div class="banner-area">
+    <div class="banner-container">
+        {% for banner in site.banner %}
+            <div class="banner-item">
+                <div class="banner-item-content">
+                    <div class="banner-item-text">
+                        {{ banner.content }}
+                    </div>
+                    <button class="close-banner">
+                        &times;
+                    </button>
+                </div>
             </div>
-        </div>
-    {% endfor %}
+        {% endfor %}
+    </div>
 </div>
