@@ -1,25 +1,19 @@
 <div class ="hero-area">
     <div class="hero-container">
-        {% assign first_hero_url = site.hero[0].url %}
-        {% for hero_item in site.hero %}
-            {% assign hero_labels = hero_item.url | split: '/' %}
-            {% if hero_labels.size == 3 %}
-                {% assign item_label = hero_labels[2] %}
-                <div 
-                    class="hero-item 
-                        {% if hero_item.url == first_hero_url %}
-                            active-hero-item
-                        {% endif %}
-                    "
-                >
-                    {{ hero_item.content }}
-                    {% for hero_item_nested_content in site.hero %}
-                        {% assign nested_content_labels = hero_item_nested_content.url | split: '/' %}
-                        {% if nested_content_labels[2] == item_label and nested_content_labels.size == 4 %}
-                            <div 
-                                class="hero-item-content hero-item-content-align-{{ hero_item_nested_content.alignment }}"
-                            >
-                                {{ hero_item_nested_content.content }}
+        {% for content_item in site.homepage-content %}
+            {% assign content_labels = content_item.url | split: '/' %}
+            {% if content_labels[2] != 'hero' %}
+                {% continue %}
+            {% endif %}
+            {% if content_labels.size == 4 %}
+                {% assign item_label = content_labels[3] %}
+                <div class="hero-item">
+                    <span class="hero-image-url">{{ content_item.image }}</span>
+                    {% for nested_content_item in site.homepage-content %}
+                        {% assign nested_content_labels = nested_content_item.url | split: '/' %}
+                        {% if nested_content_labels[3] == item_label and nested_content_labels.size == 5 %}
+                            <div class="hero-item-content">
+                                {{ nested_content_item.content }}
                             </div>
                         {% endif %}
                     {% endfor %}
@@ -27,4 +21,5 @@
             {% endif %}
         {% endfor %}
     </div>
+    <div class="hero-spacer"></div>
 </div>

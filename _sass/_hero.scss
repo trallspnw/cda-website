@@ -1,0 +1,30 @@
+$hero-height: 800px;
+
+.hero-container {
+    position: absolute;
+    height: $hero-height;
+    width: 100%;
+    max-width: 2000px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.hero-item {
+    display: none;
+    height: 100%;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    &.active {
+        display: grid;
+    }
+}
+
+.hero-image-url {
+    display: none;
+}
+
+.hero-spacer {
+    height: $hero-height;
+}
