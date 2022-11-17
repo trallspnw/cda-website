@@ -1,4 +1,4 @@
-$hero-height: 800px;
+$hero-height: calc(.9 * calc(100% - 92px));
 
 .hero-container {
     position: absolute;
