@@ -14,9 +14,6 @@ collections:
   homepage-featured:
     title: Homepage Featured
     output: true
-  homepage-hero:
-    title: Homepage Hero
-    output: true
   navigation_menu:
     title: Navigation Menu
     output: true
