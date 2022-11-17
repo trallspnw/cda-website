@@ -2,8 +2,8 @@
 title: Centralia Downtown Association - Meet me in Centralia!
 timezone: UTC
 collections:
-  banner:
-    title: Banner
+  banners:
+    title: Banners
     output: true
   cards:
     title: Cards
