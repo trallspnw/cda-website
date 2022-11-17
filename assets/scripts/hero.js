@@ -11,6 +11,12 @@ export class Hero {
         if (this.heroSlides == 0) {
             return;
         }
+
+        this.setSpacerHeight();
+        $(window).on('resize', () => {
+            this.setSpacerHeight();
+        });
+
         while(true) {
             for (const slide of this.heroSlides) {
                 slide.activate(this.started);
@@ -19,6 +25,10 @@ export class Hero {
                 slide.deactivate();
             }
         }
+    }
+
+    setSpacerHeight() {
+        $('.hero-spacer').css('height', $('.hero-container').css('height'));
     }
 }
 
