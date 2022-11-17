@@ -5,6 +5,9 @@ collections:
   banners:
     title: Banners
     output: true
+  content-blocks:
+    title: Content Blocks
+    output: true
   homepage-cards:
     title: Homepage Cards
     output: true
