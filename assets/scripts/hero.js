@@ -28,10 +28,10 @@ export class HeroSlide {
     }
 
     async activate() {
-        $(this.element).show();
+        $(this.element).fadeIn();
     }
 
     async deactivate() {
-        $(this.element).hide();
+        $(this.element).fadeOut();
     }
 }

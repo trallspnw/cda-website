@@ -2,16 +2,23 @@ $hero-height: 800px;
 
 .hero-container {
     position: absolute;
-    height: $hero-height;
     width: 100%;
+    height: $hero-height;
     max-width: 2000px;
     left: 50%;
     transform: translate(-50%, 0);
 }
 
+.hero-item-wrapper {
+    position: relative;
+    height: 100%;
+}
+
 .hero-item {
+    position: absolute;
     display: none;
     height: 100%;
+    width: 100%;
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
