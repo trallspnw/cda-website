@@ -71,6 +71,6 @@ jobs:
           git checkout prod
           git add .
           git commit -m "Promote mainline to prod"
-          git remote add origin https://trallspnw:$TOKEN@github.com/trallspnw/cda-website-prod.git
+          git remote set-url origin https://trallspnw:$TOKEN@github.com/trallspnw/cda-website-prod.git
           git remote -v
           git push
