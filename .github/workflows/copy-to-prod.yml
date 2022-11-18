@@ -43,7 +43,7 @@ jobs:
             README.md
           mv .prod-files/* .
           rmdir .prod-files
-          git fetch
+          git status
 
 
           pwd
