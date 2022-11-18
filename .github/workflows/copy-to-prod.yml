@@ -43,12 +43,9 @@ jobs:
             README.md
           mv .prod-files/* .
           rmdir .prod-files
-          cp -r ../cda-website-prod/.git .
+          git fetch
 
-          pwd
-          ls -a
 
-          cd .git
           pwd
           ls -a
       #    cp -r build/dist/* deploy
