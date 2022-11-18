@@ -48,6 +48,7 @@ jobs:
       - name: Clean Temp
         run: |
           cd temp
+          git fetch
           git checkout mainline
           rm -rf \
             .git \
