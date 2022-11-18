@@ -35,32 +35,6 @@ jobs:
           cd cda-website
           pwd
           ls -a
-          mkdir temp
-          cp -R cda-website/* temp/
-          cd temp
-          pwd
-          ls -a
-          rm -rf \
-            CNAME \
-            README.md \
-            .github \
-            .gitignore
-          
-          # TODO Add CNAME and README
-
-          pwd
-          ls -a
-
-          cd ../cda-website-prod
-          cp -R .git ../temp
-          pwd
-          ls -a
-          rm -rf {,.[!.],..?}*
-          pwd
-          ls -a
-          cp -R ../temp/* .
-          pwd
-          ls -a
       #    cp -r build/dist/* deploy
       #    cd deploy
       #    touch .nojekyll
