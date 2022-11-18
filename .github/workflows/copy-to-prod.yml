@@ -43,10 +43,18 @@ jobs:
           
           # TODO Add CNAME and README
 
+          pwd
+          ls -a
+
           cd ../cda-website-prod
           cp -R .git ../temp
+          pwd
+          ls -a
           rm -rf *
+          pwd
+          ls -a
           cp -R ../temp/* .
+          pwd
           ls -a
       #    cp -r build/dist/* deploy
       #    cd deploy
