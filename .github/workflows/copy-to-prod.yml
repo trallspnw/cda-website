@@ -62,24 +62,13 @@ jobs:
       - name: Copy Temp to Prod
         run: |
           mv temp/* cda-website-prod/
-      - name: Push to Prod with Help
-        uses: cpina/github-action-push-to-another-repository@main
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.PAT }}
-        with:
-          source-directory: 'cda-website-prod'
-          destination-github-username: 'trallspnw'
-          destination-repository-name: 'cda-website-prod'
-          user-email: actions@github.com
-          target-branch: prod
-
-
       - name: Push to Prod
         env:
           TOKEN: ${{ secrets.PAT }}
         run: |
           cd cda-website-prod
           git fetch
+          git config --local --unset-all "http.https://github.com/.extraheader"
           git checkout prod
           git add .
           git commit -m "Promote mainline to prod"
