@@ -66,11 +66,10 @@ jobs:
         env:
           TOKEN: ${{ secrets.PAT }}
         run: |
-          echo secret: $TOKEN
           cd cda-website-prod
           git fetch
           git checkout prod
           git add .
           git commit -m "Promote mainline to prod"
           git remote -v
-          git push -u https://$TOKEN@github.com/trallspnw/cda-website-prod prod
+          git push -u https://trallspnw:$TOKEN@github.com/trallspnw/cda-website-prod prod
