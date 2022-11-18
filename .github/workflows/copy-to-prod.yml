@@ -34,19 +34,23 @@ jobs:
         run: |
           git config --global user.email "actions@github.com"
           git config --global user.name "Github Actions"
+      - name: Turn On Dots
+        run: |
+          shopt -s dotglob
       - name: Gut Prod Content
         run: |
-          shopt -s    dotglob
           mv cda-website-prod/.git prod-git-backup
           rm -rf cda-website-prod/*
           mv prod-git-backup cda-website-prod/.git
-          echo test1
-          ls -a cda-website-prod
-          echo test2
-          ls -a cda-website-prod/.git
-      - name: Everything Else
+      - name: Copy Source to Temp
         run: |
+          mkdir temp
+          cp -r cda-website/* temp/
+          ls -a temp/
 
+
+      -name: Trash
+        run: |   
 
           cd cda-website
           git fetch
