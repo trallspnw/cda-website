@@ -50,7 +50,7 @@ jobs:
           cp -R .git ../temp
           pwd
           ls -a
-          rm -rf *
+          rm -rf {,.[!.],..?}*
           pwd
           ls -a
           cp -R ../temp/* .
