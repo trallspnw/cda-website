@@ -20,17 +20,17 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Mainline Target
+      - name: Checkout Source
         uses: actions/checkout@v3
         with: 
           repository: trallspnw/cda-website
           path: cda-website
-      - name: Checkout Prod Target
+      - name: Checkout Target
         uses: actions/checkout@v3
         with:
           repository: trallspnw/cda-website-prod
           path: cda-website-prod
-      - name: Push files to target
+      - name: Copy and Push to Target
         run: |
           mkdir temp
           cp -R cda-website/* temp/
@@ -46,7 +46,7 @@ jobs:
           cd ../cda-website-prod
           cp -R .git ../temp
           rm -rf *
-          cp -R ../temp .
+          cp -R ../temp/* .
           ls -a
       #    cp -r build/dist/* deploy
       #    cd deploy
