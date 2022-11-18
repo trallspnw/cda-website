@@ -45,6 +45,7 @@ jobs:
       - name: Copy Source to Temp
         run: |
           cd cda-website
+          git fetch
           git checkout mainline
           cd ..
           cp -r cda-website temp
