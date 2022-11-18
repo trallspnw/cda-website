@@ -64,7 +64,7 @@ jobs:
           mv temp/* cda-website-prod/
       - name: Push to Prod
         env:
-          TOKEN: ${{ secrets.Dev }}
+          TOKEN: ${{ github.token }}
         run: |
           echo $TOKEN
           echo "git push -u https://$TOKEN@github.com/trallspnw/cda-website-prod prod"
