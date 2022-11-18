@@ -64,7 +64,7 @@ jobs:
           mv temp/* cda-website-prod/
       - name: Push to Prod
         env:
-          TOKEN: ${{ github.token }}
+          TOKEN: ${{ secrets.ACTIONS }}
         run: |
           cd cda-website-prod
           git fetch
@@ -72,4 +72,4 @@ jobs:
           git add .
           git commit -m "Promote mainline to prod"
           git remote -v
-          git push -u https://github-actions[bot]:$TOKEN@github.com/trallspnw/cda-website-prod prod
+          git push -u https://$TOKEN@github.com/trallspnw/cda-website-prod prod
