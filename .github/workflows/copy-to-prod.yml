@@ -42,6 +42,7 @@ jobs:
           touch test
           git add .
           git commit -m "test commit from bot"
+          git remove -v
           git push
 
 
