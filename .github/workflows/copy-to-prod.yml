@@ -35,12 +35,12 @@ jobs:
           cd cda-website
           git fetch
           git checkout mainline
-          rm \
+          rm -rf \
             .git \
             .github \
             .gitignore \
-            .CNAME \
-            .README.md
+            CNAME \
+            README.md
 
           pwd
           ls -a
