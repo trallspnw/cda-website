@@ -45,7 +45,21 @@ jobs:
       - name: Copy Source to Temp
         run: |
           cp -r cda-website temp
-          ls -a temp/
+      - name: Clean Temp
+        run: |
+          cd temp
+          git checkout mainline
+          rm -rf \
+            .git \
+            .github \
+            .gitignore \
+            CNAME \
+            README.md
+          mv .prod-files/* .
+          rmdir .prod-files
+          cd ..
+
+          ls -a temp  
 
 
       - name: Trash
@@ -66,11 +80,4 @@ jobs:
           git add .
           git commit -m "Sync prod from mainline"
           git push
-      #    cp -r build/dist/* deploy
-      #    cd deploy
-      #    touch .nojekyll
-      #    echo ${{ env.URL }} > CNAME
-      #    git add .
-      #    git commit -m $GITHUB_SHA
-      #    git push
-          
+
