@@ -33,6 +33,7 @@ jobs:
       - name: Copy and Push to Target
         run: |
           cd cda-website
+          git fetch
           git checkout mainline
           rm \
             .git \
