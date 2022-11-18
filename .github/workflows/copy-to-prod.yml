@@ -64,7 +64,7 @@ jobs:
           mv temp/* cda-website-prod/
       - name: Push to Prod
         env:
-          TOKEN: ${{ secrets.ACTIONS }}
+          TOKEN: ${{ secrets.GITHUB_TOKEN  }}
         run: |
           cd cda-website-prod
           git fetch
