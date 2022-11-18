@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-permissions:
+permissions: 
   contents: write
   pages: write
   id-token: write
@@ -68,10 +68,9 @@ jobs:
         run: |
           cd cda-website-prod
           git fetch
-          git config --local --unset-all "http.https://github.com/.extraheader"
           git checkout prod
           git add .
           git commit -m "Promote mainline to prod"
+          git config --local --unset-all "http.https://github.com/.extraheader"
           git remote set-url origin https://trallspnw:$TOKEN@github.com/trallspnw/cda-website-prod.git
-          git remote -v
           git push
