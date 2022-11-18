@@ -29,7 +29,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           repository: trallspnw/cda-website-prod
-          path: trallspnw/cda-website-prod
+          path: cda-website-prod
       - name: Push files to target
         run: |
           pwd
