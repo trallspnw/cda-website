@@ -44,8 +44,7 @@ jobs:
           mv prod-git-backup cda-website-prod/.git
       - name: Copy Source to Temp
         run: |
-          mkdir temp
-          cp -r cda-website/* temp/
+          cp -r cda-website temp
           ls -a temp/
 
 
