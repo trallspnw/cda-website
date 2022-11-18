@@ -30,25 +30,23 @@ jobs:
         with:
           repository: trallspnw/cda-website-prod
           path: cda-website-prod
-      - name: Copy and Push to Target
+      - name: Config Global Git
         run: |
           git config --global user.email "actions@github.com"
           git config --global user.name "Github Actions"
-          
+      - name: Gut Prod Content
+        run: |
+          mv cda-website-prod/.git prod-git-backup
+          rm -rf cda-website-prod/*
+          mv prod-git-backup cda-website-prod/.git
+          echo test1
+          ls -a cda-website-prod
+          echto test2
+          ls -a cda-website-prod/.git
+      - name: Everything Else
+        run: |
 
-          cd cda-website-prod
-          git config --unset-all http.https://github.com/.extraheader
-          git fetch
-          git checkout prod
-          touch test
-          git add .
-          git commit -m "test commit from bot"
-          git remote -v
-          git push
 
-
-
-          
           cd cda-website
           git fetch
           git checkout mainline
