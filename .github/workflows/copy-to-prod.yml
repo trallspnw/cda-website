@@ -61,26 +61,10 @@ jobs:
           mv .prod-files/* .
           rmdir .prod-files
           cd ..
-
-          ls -a temp  
-
-
-      - name: Trash
-        run: |   
-
-          cd cda-website
-          git fetch
-          git checkout mainline
-          rm -rf \
-            .git \
-            .github \
-            .gitignore \
-            CNAME \
-            README.md
-          mv .prod-files/* .
-          rmdir .prod-files
-          cp -r ../cda-website-prod/.git .
-          git add .
-          git commit -m "Sync prod from mainline"
-          git push
-
+      - name: Copy Temp to Prod
+        run: |
+          mv temp/* cda-website-prod/
+          echo temp
+          ls -a temp
+          echo prod
+          ls -a cda-website-prod
