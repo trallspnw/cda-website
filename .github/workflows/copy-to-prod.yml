@@ -34,6 +34,17 @@ jobs:
         run: |
           git config --global user.email "actions@github.com"
           git config --global user.name "Github Actions"
+
+          cd cda-website-prod
+          git checkout prod
+          touch test
+          git add .
+          git commit -m "test commit from bot"
+          git push
+
+
+
+          
           cd cda-website
           git fetch
           git checkout mainline
