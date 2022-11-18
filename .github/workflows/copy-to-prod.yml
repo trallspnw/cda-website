@@ -63,6 +63,8 @@ jobs:
           cd ..
       - name: Copy Temp to Prod
         run: |
+          echo before
+          ls -a cda-website-prod
           mv temp/* cda-website-prod/
           echo temp
           ls -a temp
