@@ -36,12 +36,13 @@ jobs:
           git config --global user.name "Github Actions"
       - name: Gut Prod Content
         run: |
+          shopt -s    dotglob
           mv cda-website-prod/.git prod-git-backup
           rm -rf cda-website-prod/*
           mv prod-git-backup cda-website-prod/.git
           echo test1
           ls -a cda-website-prod
-          echto test2
+          echo test2
           ls -a cda-website-prod/.git
       - name: Everything Else
         run: |
