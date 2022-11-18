@@ -38,7 +38,7 @@ jobs:
         run: |
           mv cda-website-prod/.git prod-git-backup
           rm -rf cda-website-prod/*
-          rm -rf cda-website-prod/.*
+          rm -rf cda-website-prod/.?*
           mv prod-git-backup cda-website-prod/.git
       - name: Copy Source to Temp
         run: |
