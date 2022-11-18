@@ -32,6 +32,9 @@ jobs:
           path: cda-website-prod
       - name: Copy and Push to Target
         run: |
+          cd cda-website
+          pwd
+          ls -a
           mkdir temp
           cp -R cda-website/* temp/
           cd temp
