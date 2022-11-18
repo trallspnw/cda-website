@@ -20,8 +20,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Mainline Target
-        uses: actions/checkout@v3
+      #- name: Checkout Mainline Target
+      #  uses: actions/checkout@v3
       - name: Checkout Prod Target
         uses: actions/checkout@v3
         with:
@@ -38,7 +38,7 @@ jobs:
            ls -a
            cd cda-website
            pwd
-           ls-a
+           ls -a
       #    cp -r build/dist/* deploy
       #    cd deploy
       #    touch .nojekyll
