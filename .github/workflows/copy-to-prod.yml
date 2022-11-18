@@ -44,11 +44,9 @@ jobs:
           mv .prod-files/* .
           rmdir .prod-files
           cp -r ../cda-website-prod/.git .
-          git status
-
-
-          pwd
-          ls -a
+          git add .
+          git commit -m "Sync prod from mainline"
+          git push
       #    cp -r build/dist/* deploy
       #    cd deploy
       #    touch .nojekyll
