@@ -49,7 +49,7 @@ jobs:
           ls -a temp/
 
 
-      -name: Trash
+      - name: Trash
         run: |   
 
           cd cda-website
