@@ -65,7 +65,6 @@ jobs:
       - name: Push to Prod with Help
         uses: cpina/github-action-push-to-another-repository@main
         env:
-          SSH_DEPLOY_KEY: ${{ secrets.SSH_DEPLOY_KEY }}
           API_TOKEN_GITHUB: ${{ secrets.PAT }}
         with:
           source-directory: 'cda-website-prod'
