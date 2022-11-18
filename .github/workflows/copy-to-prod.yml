@@ -36,6 +36,7 @@ jobs:
           git config --global user.name "Github Actions"
 
           cd cda-website-prod
+          git fetch
           git checkout prod
           touch test
           git add .
