@@ -61,10 +61,13 @@ jobs:
           cd ..
       - name: Copy Temp to Prod
         run: |
-          echo before
-          ls -a cda-website-prod
           mv temp/* cda-website-prod/
-          echo temp
-          ls -a temp
-          echo prod
-          ls -a cda-website-prod
+      - name: Commit to Prod
+        run: |
+          cd cda-website-prod
+          git fetch
+          git checkout prod
+          git add .
+          git commit -m "Promote mainline to prod"
+          git push
+          
