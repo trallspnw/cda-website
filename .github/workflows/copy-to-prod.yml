@@ -35,7 +35,18 @@ jobs:
           mkdir temp
           cp -R cda-website/* temp/
           cd temp
+          rm -rf \
+            CNAME \
+            README.md \
+            .github \
+            .gitignore
           
+          # TODO Add CNAME and README
+
+          cd ../cda-website-prod
+          cp -R .git ../temp
+          rm -rf *
+          cp -R ../temp .
           ls -a
       #    cp -r build/dist/* deploy
       #    cd deploy
