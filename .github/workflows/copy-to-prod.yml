@@ -33,7 +33,7 @@ jobs:
       - name: Copy and Push to Target
         run: |
           mkdir temp
-          cp -R cda-website/* temp/
+          cp -R cda-website/{,.[!.],..?}* temp/
           cd temp
           rm -rf \
             CNAME \
@@ -53,7 +53,7 @@ jobs:
           rm -rf {,.[!.],..?}*
           pwd
           ls -a
-          cp -R ../temp/* .
+          cp -R ../temp/{,.[!.],..?}* .
           pwd
           ls -a
       #    cp -r build/dist/* deploy
