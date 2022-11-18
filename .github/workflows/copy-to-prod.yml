@@ -41,13 +41,14 @@ jobs:
             .gitignore \
             CNAME \
             README.md
+          mv .prod-files/* .
+          rmdir .prod-files
+          cp -r ../cda-website-prod/.git .
 
           pwd
           ls -a
 
-          mv .prod-files/* .
-          rmdir .prod-files
-
+          cd .git
           pwd
           ls -a
       #    cp -r build/dist/* deploy
