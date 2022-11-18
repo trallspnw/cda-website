@@ -1,5 +1,5 @@
 # Sample workflow for building and deploying a Jekyll site to GitHub Pages
-name: Copy to Prod Repo
+name: copy-to-prod
 
 on:
   # Runs on pushes targeting the default branch
@@ -32,15 +32,16 @@ jobs:
           path: trallspnw/cda-website-prod
       - name: Push files to target
         run: |
-           cd /home/runner/work
-           pwd
-           ls -a
-           cd cda-website
-           pwd
-           ls -a
-           cd cda-website
-           pwd
-           ls -a
+          pwd
+          cd /home/runner/work
+          pwd
+          ls -a
+          cd cda-website
+          pwd
+          ls -a
+          cd cda-website
+          pwd
+          ls -a
       #    cp -r build/dist/* deploy
       #    cd deploy
       #    touch .nojekyll
