@@ -66,12 +66,10 @@ jobs:
         env:
           TOKEN: ${{ github.token }}
         run: |
-          echo $TOKEN
-          echo "git push -u https://$TOKEN@github.com/trallspnw/cda-website-prod prod"
           cd cda-website-prod
           git fetch
           git checkout prod
           git add .
           git commit -m "Promote mainline to prod"
           git remote -v
-          git push -u https://$TOKEN@github.com/trallspnw/cda-website-prod prod
+          git push -u https://github-actions[bot]:$TOKEN@github.com/trallspnw/cda-website-prod prod
