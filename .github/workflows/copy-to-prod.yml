@@ -33,7 +33,7 @@ jobs:
       - name: Push files to target
         run: |
           mkdir temp
-          cp cda-website/* temp/
+          cp -R cda-website/* temp/
           cd temp
           
           ls -a
