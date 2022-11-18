@@ -6,17 +6,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Publish Step
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          
-          git fetch
-          git log
-          git checkout mainline
-          git log
-          git branch -u origin/dev
-          git pull --rebase
-          git branch -u origin/mainline
-          git push
+        uses: devmasx/merge-branch@master
+        with:
+          type: now
+          target_branch: mainline
+          github_token: ${{ github.token }}
