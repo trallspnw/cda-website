@@ -28,8 +28,9 @@ jobs:
           repository: trallspnw/cda-website-prod
           #token: ${{ secrets.pat }}
           path: trallspnw/cda-website-prod
-      #- name: Push files to target
-      #  run: |
+      - name: Push files to target
+        run: |
+           ls
       #    cp -r build/dist/* deploy
       #    cd deploy
       #    touch .nojekyll
