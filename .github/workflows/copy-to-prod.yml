@@ -32,15 +32,10 @@ jobs:
           path: cda-website-prod
       - name: Push files to target
         run: |
-          pwd
-          cd /home/runner/work
-          pwd
-          ls -a
-          cd cda-website
-          pwd
-          ls -a
-          cd cda-website
-          pwd
+          mkdir temp
+          cp cda-website/* temp/
+          cd temp
+          
           ls -a
       #    cp -r build/dist/* deploy
       #    cd deploy
