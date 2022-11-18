@@ -62,12 +62,12 @@ jobs:
       - name: Copy Temp to Prod
         run: |
           mv temp/* cda-website-prod/
-      - name: Commit to Prod
+      - name: Push to Prod
         run: |
           cd cda-website-prod
           git fetch
           git checkout prod
           git add .
           git commit -m "Promote mainline to prod"
+          git remote -v
           git push
-          
