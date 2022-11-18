@@ -33,6 +33,20 @@ jobs:
       - name: Copy and Push to Target
         run: |
           cd cda-website
+          git checkout mainline
+          rm \
+            .git \
+            .github \
+            .gitignore \
+            .CNAME \
+            .README.md
+
+          pwd
+          ls -a
+
+          mv .prod-files/* .
+          rmdir .prod-files
+
           pwd
           ls -a
       #    cp -r build/dist/* deploy
