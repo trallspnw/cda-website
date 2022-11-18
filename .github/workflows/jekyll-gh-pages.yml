@@ -30,8 +30,15 @@ jobs:
           path: trallspnw/cda-website-prod
       - name: Push files to target
         run: |
-           ls
+           cd /home/runner/work
            pwd
+           ls -a
+           cd cda-website
+           pwd
+           ls -a
+           cd cda-website
+           pwd
+           ls-a
       #    cp -r build/dist/* deploy
       #    cd deploy
       #    touch .nojekyll
