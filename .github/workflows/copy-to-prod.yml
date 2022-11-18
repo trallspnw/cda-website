@@ -64,10 +64,10 @@ jobs:
           mv temp/* cda-website-prod/
       - name: Push to Prod
         env:
-          TOKEN: ${{ secrets.Dev }}
+          TOKEN: ${{ secrets.PAT }}
         run: |
           echo $TOKEN
-          ehco "git push -u https://user:$TOKEN@github.com/trallspnw/cda-website-prod prod"
+          echo "git push -u https://user:$TOKEN@github.com/trallspnw/cda-website-prod prod"
           cd cda-website-prod
           git fetch
           git checkout prod
