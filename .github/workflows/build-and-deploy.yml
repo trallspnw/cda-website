@@ -47,7 +47,7 @@ jobs:
       - name: Dev Branch
         run: |
           git checkout dev
-          la -a ./_site/website-admin
+          ls -a ./_site/website-admin
       - name: Build Dev
         uses: actions/jekyll-build-pages@v1
         with:
