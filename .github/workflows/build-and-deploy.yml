@@ -37,13 +37,15 @@ jobs:
         uses: actions/configure-pages@v2
       - name: Prod Branch
         run: |
+          pwd
+          ls -a ..
           git fetch
           git checkout mainline
       - name: Build Prod
         uses: actions/jekyll-build-pages@v1
         with:
           source: ./
-          destination: ./_site
+          destination: ../_site
       - name: Dev Branch
         run: |
           git checkout dev
@@ -51,14 +53,16 @@ jobs:
         uses: actions/jekyll-build-pages@v1
         with:
           source: ./
-          destination: ./_site/website-admin/test
+          destination: ../_site/website-admin/test
       - name: Clean Dev Build
         run: |
-          rm ./_site/website-admin/test/home.html
-          mv ./_site/website-admin/test/index.html ./_site/website-admin/test/home.html
-          rm -rf ./_site/website-admin/test/website-admin
+          rm ../_site/website-admin/test/home.html
+          mv ../_site/website-admin/test/index.html ./_site/website-admin/test/home.html
+          rm -rf ../_site/website-admin/test/website-admin
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
+        with:
+          path: ../_site
 
   # Deployment job
   #deploy:
