@@ -7,16 +7,17 @@ jobs:
   merge:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
       - name: Publish Step
+        uses: actions/checkout@v3
         uses: devmasx/merge-branch@master
         with:
           type: now
           from_branch: dev
           target_branch: prod
           github_token: ${{ github.token }}
+
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Build and Deploy
-      - uses: trallspnw/build-and-deploy@v1
+        uses: trallspnw/build-and-deploy@v1
