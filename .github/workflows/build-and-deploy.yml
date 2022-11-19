@@ -44,14 +44,9 @@ jobs:
         with:
           source: ./
           destination: ./_site
-      - name: Save Artifacts
-        run: |
-          # cp -r ./_site ..
-          ls ..
       - name: Dev Branch
         run: |
           git checkout dev
-          #rm -rf ./_site
       - name: Build Dev
         uses: actions/jekyll-build-pages@v1
         with:
@@ -61,15 +56,11 @@ jobs:
         run: |
           ls -a
           ls -a ./_site
-          cp -r ./_site ../_site/website-admin/test
-          cd ..
-          ls -a .
-          ls -a ./_site
           ls -a ./_site/website-admin
-          ls -a ./_site/website-admin/test
-          rm ./_site/website-admin/test/home.html
-          mv ./_site/website-admin/test/index.html ./_site/website-admin/test/home.html
-          rm -rf ./_site/website-admin/test/website-admin
+
+          #rm ./_site/website-admin/test/home.html
+          #mv ./_site/website-admin/test/index.html ./_site/website-admin/test/home.html
+          #rm -rf ./_site/website-admin/test/website-admin
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
