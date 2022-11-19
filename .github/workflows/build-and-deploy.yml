@@ -54,25 +54,22 @@ jobs:
           destination: ./_site/website-admin/test
       - name: Clean Dev Build
         run: |
-          ls -a ./_site/website-admin/test
-
-          #mv ./_site/website-admin/test/index.html ./_site/website-admin/test/home.html
           rm -rf ./_site/website-admin/website-admin*
 
-          ls -a ./_site/website-admin
+          ls -a ./_site/website-admin/test
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
           path: ./_site
 
   # Deployment job
-  #deploy:
-  #  environment:
-  #    name: github-pages
-  #    url: ${{ steps.deployment.outputs.page_url }}
-  #  runs-on: ubuntu-latest
-  #  needs: build
-  #  steps:
-  #    - name: Deploy to GitHub Pages
-  #      id: deployment
-  #      uses: actions/deploy-pages@v1
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
