@@ -2,11 +2,7 @@
 name: dual-branch-deploy
 
 on: 
-  push:
-  # Runs on pushes targeting the default branch
   #push:
-  #  branches: ["dev", "prod"]
-
   # Runs on publish
   #workflow_run:
   #  workflows: [📕 Publish 🎉]
