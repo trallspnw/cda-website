@@ -51,19 +51,19 @@ jobs:
         uses: actions/jekyll-build-pages@v1
         with:
           source: ./
-          destination: ../_site/website-admin/test
+          destination: ./_site/website-admin/test
       - name: Clean Dev Build
         run: |
-          ls -a /tmp/_site
-          ls -a /tmp/_site/website-admin
-          ls -a /tmp/_site/website-admin/test
-          rm /tmp/_site/website-admin/test/home.html
-          mv /tmp/_site/website-admin/test/index.html ./_site/website-admin/test/home.html
-          rm -rf /tmp/_site/website-admin/test/website-admin
+          ls -a /github/workspace/_site
+          ls -a /github/workspace/_site/website-admin
+          ls -a /github/workspace/_site/website-admin/test
+          rm /github/workspace/_site/website-admin/test/home.html
+          mv /github/workspace/_site/website-admin/test/index.html github/workspace/_site/website-admin/test/home.html
+          rm -rf /github/workspace/_site/website-admin/test/website-admin
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: /tmp/_site
+          path: /github/workspace/_site
 
   # Deployment job
   #deploy:
