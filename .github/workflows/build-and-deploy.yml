@@ -39,34 +39,36 @@ jobs:
         run: |
           git fetch
           git checkout mainline
-          cd ..
       - name: Build Prod
         uses: actions/jekyll-build-pages@v1
         with:
-          source: ./cda-website
+          source: ./
           destination: ./_site
+      - name: Save Artifacts
+        run: |
+          cp -r ./_site ..
+          ls ..
       - name: Dev Branch
         run: |
-          cd cda-website
           git checkout dev
-          cd ..
+          ls -a
       - name: Build Dev
         uses: actions/jekyll-build-pages@v1
         with:
-          source: ./cda-website
-          destination: ./_site/website-admin/test
+          source: ./
+          destination: ../_site/website-admin/test
       - name: Clean Dev Build
         run: |
-          pwd
           ls -a
-          rm ./_site/website-admin/test/home.html
-          mv ./_site/website-admin/test/index.html \
-            ./_site/website-admin/test/home.html
-          rm -rf ./_site/website-admin/test/website-admin
+          ls -a ..
+          rm /github/workspace/_site/website-admin/test/home.html
+          mv /github/workspace/_site/website-admin/test/index.html \
+            github/workspace/_site/website-admin/test/home.html
+          rm -rf /github/workspace/_site/website-admin/test/website-admin
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: ./_site
+          path: /github/workspace/_site
 
   # Deployment job
   #deploy:
