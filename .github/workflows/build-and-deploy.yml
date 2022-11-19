@@ -43,7 +43,7 @@ jobs:
         uses: actions/jekyll-build-pages@v1
         with:
           source: ./
-          destination: ../_site
+          destination: /tmp/_site
       - name: Dev Branch
         run: |
           git checkout dev
@@ -54,16 +54,16 @@ jobs:
           destination: ../_site/website-admin/test
       - name: Clean Dev Build
         run: |
-          ls -a ../_site
-          ls -a ../_site/website-admin
-          ls -a ../_site/website-admin/test
-          rm ../_site/website-admin/test/home.html
-          mv ../_site/website-admin/test/index.html ./_site/website-admin/test/home.html
-          rm -rf ../_site/website-admin/test/website-admin
+          ls -a /tmp/_site
+          ls -a /tmp/_site/website-admin
+          ls -a /tmp/_site/website-admin/test
+          rm /tmp/_site/website-admin/test/home.html
+          mv /tmp/_site/website-admin/test/index.html ./_site/website-admin/test/home.html
+          rm -rf /tmp/_site/website-admin/test/website-admin
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: ../_site
+          path: /tmp/_site
 
   # Deployment job
   #deploy:
