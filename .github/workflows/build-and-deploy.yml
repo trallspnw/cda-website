@@ -54,7 +54,7 @@ jobs:
           destination: ./_site/website-admin/test
       - name: Clean Dev Build
         run: |
-          rm -rf ./_site/website-admin/test/website-admin*
+          sudo rm -rf ./_site/website-admin/test/website-admin*
 
           ls -a ./_site/website-admin/test
       - name: Upload artifact
