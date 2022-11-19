@@ -1,10 +1,11 @@
 # Sample workflow for building and deploying a Jekyll site to GitHub Pages
 name: dual-branch-deploy
 
-on:
-  # Runs on pushes targeting the default branch
+on: 
   push:
-    branches: ["dev", "prod"]
+  # Runs on pushes targeting the default branch
+  #push:
+  #  branches: ["dev", "prod"]
 
   # Runs on publish
   #workflow_run:
