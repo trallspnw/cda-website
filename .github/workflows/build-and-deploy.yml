@@ -56,8 +56,7 @@ jobs:
         run: |
           ls -a ./_site/website-admin/test
 
-          rm ./_site/website-admin/test/home.html
-          mv ./_site/website-admin/test/index.html ./_site/website-admin/test/home.html
+          #mv ./_site/website-admin/test/index.html ./_site/website-admin/test/home.html
           rm -rf ./_site/website-admin/website-admin*
 
           ls -a ./_site/website-admin
