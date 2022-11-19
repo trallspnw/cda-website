@@ -46,19 +46,21 @@ jobs:
           destination: ./_site
       - name: Save Artifacts
         run: |
-          cp -r ./_site ..
+          # cp -r ./_site ..
           ls ..
       - name: Dev Branch
         run: |
           git checkout dev
-          rm -rf ./_site
+          #rm -rf ./_site
       - name: Build Dev
         uses: actions/jekyll-build-pages@v1
         with:
           source: ./
-          destination: ../_site
+          destination: ./_site/website-admin
       - name: Save and Clean Dev Build
         run: |
+          ls -a
+          ls -a ./_site
           cp -r ./_site ../_site/website-admin/test
           cd ..
           ls -a .
