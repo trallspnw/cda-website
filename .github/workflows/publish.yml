@@ -23,7 +23,7 @@ concurrency:
 jobs:
   merge:
     # Merges dev to prod
-    if: merge_to_prod
+    if: inputs.merge_to_prod
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
