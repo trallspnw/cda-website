@@ -7,8 +7,9 @@ jobs:
   merge:
     runs-on: ubuntu-latest
     steps:
-      - name: Publish Step
+      - name: Checkout
         uses: actions/checkout@v3
+      - name: Publish Step  
         uses: devmasx/merge-branch@master
         with:
           type: now
