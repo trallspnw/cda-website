@@ -3,7 +3,7 @@ name: 📕 Publish 🎉
 on: workflow_dispatch
 
 jobs:
-  build:
+  merge:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -14,3 +14,8 @@ jobs:
           from_branch: dev
           target_branch: prod
           github_token: ${{ github.token }}
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      -name: Build and Deploy
+      -uses: trallspnw/build-and-deploy@v1

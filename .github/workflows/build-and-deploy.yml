@@ -7,10 +7,10 @@ on:
     branches: ["dev", "prod"]
 
   # Runs on publish
-  workflow_run:
-    workflows: [📕 Publish 🎉]
-    types:
-      - completed
+  #workflow_run:
+  #  workflows: [📕 Publish 🎉]
+  #  types:
+  #    - completed
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
