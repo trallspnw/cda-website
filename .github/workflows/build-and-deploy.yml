@@ -54,6 +54,7 @@ jobs:
           destination: ./_site/website-admin/test
       - name: Clean Dev Build
         run: |
+          la -a
           ls -a /
           ls -a /github
           ls -a /github/workspace
