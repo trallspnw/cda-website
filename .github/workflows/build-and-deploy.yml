@@ -44,6 +44,9 @@ jobs:
         with:
           source: ./
           destination: ./_site
+      - name: Confirm
+        run: |
+          cat ./_site/index.html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
 
