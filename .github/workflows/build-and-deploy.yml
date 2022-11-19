@@ -4,7 +4,7 @@ name: dual-branch-deploy
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["dev"]
+    branches: ["dev", "prod"]
 
   # Runs on publish
   workflow_run:
@@ -38,7 +38,7 @@ jobs:
       - name: Prod Branch
         run: |
           git fetch
-          git checkout mainline
+          git checkout prod
       - name: Build Prod
         uses: actions/jekyll-build-pages@v1
         with:

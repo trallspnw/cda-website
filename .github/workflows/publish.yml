@@ -12,5 +12,5 @@ jobs:
         with:
           type: now
           from_branch: dev
-          target_branch: mainline
+          target_branch: prod
           github_token: ${{ github.token }}
