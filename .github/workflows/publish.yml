@@ -1,12 +1,12 @@
 name: Publish
 
-on: [workflow_dispatch]
-
 inputs:
   merge_to_prod:
     type: boolean
     description: "Whether dev should be merged to prod before deployment"
     default: false
+
+on: [workflow_dispatch]
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
