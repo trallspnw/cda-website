@@ -1,0 +1,38 @@
+---
+title: Test Centralia Downtown Association - Meet me in Centralia!
+timezone: UTC
+collections:
+  banners:
+    title: Banners
+    output: true
+  homepage-content:
+    title: Homepage Content
+    output: true
+  page-content:
+    title: Page Content
+    output: true
+    permalink: "/:path"
+  posts:
+    title: Posts
+    output: true
+  uploads:
+    title: Uploads
+    output: true
+defaults:
+- scope:
+    path: ''
+  values:
+    layout: default
+email: your-email@example.com
+description: The Centralia Downtown Association is your family's best source for things
+  to do in  Centralia WA! Find resources for visitors in Centralia and links to great
+  resources in  Lewis County. Historic downtown Centralia has charming restaurants,
+  antique shopping  and local arts. We are halfway between Portland and Seattle, and
+  a great stop for your  next adventure!
+baseurl: 
+url: https://cda.rallspnw.com/website-admin/test
+permalink: "/:slug"
+markdown: kramdown
+plugins:
+- jekyll-feed
+- jekyll-seo-tag
