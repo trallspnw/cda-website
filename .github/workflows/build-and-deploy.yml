@@ -47,15 +47,15 @@ jobs:
       - name: Dev Branch
         run: |
           git checkout dev
-          ls -a ./_site/website-admin
+          ls -a ./_site/website-admin/test
       - name: Build Dev
         uses: actions/jekyll-build-pages@v1
         with:
           source: ./
-          destination: ./_site/website-admin
+          destination: ./_site/website-admin/test
       - name: Clean Dev Build
         run: |
-          ls -a ./_site/website-admin
+          ls -a ./_site/website-admin/test
 
           mv ./_site/website-admin/test/index.html ./_site/website-admin/test/home.html
           rm -rf ./_site/website-admin/website-admin*
