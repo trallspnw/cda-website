@@ -57,8 +57,8 @@ jobs:
           rm ./_site/website-admin/test/home.html
           mv ./_site/website-admin/test/index.html ./_site/website-admin/test/home.html
           rm -rf ./_site/website-admin/test/website-admin
-        - name: Upload artifact
-          uses: actions/upload-pages-artifact@v1
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
 
   # Deployment job
   #deploy:
