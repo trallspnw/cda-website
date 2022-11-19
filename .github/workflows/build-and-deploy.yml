@@ -37,6 +37,7 @@ jobs:
         uses: actions/configure-pages@v2
       - name: With to Prod Branch
         run: |
+          git fetch
           git checkout mainline
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
