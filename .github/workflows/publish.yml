@@ -17,5 +17,5 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      -name: Build and Deploy
-      -uses: trallspnw/build-and-deploy@v1
+      - name: Build and Deploy
+      - uses: trallspnw/build-and-deploy@v1
