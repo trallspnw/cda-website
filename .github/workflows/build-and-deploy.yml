@@ -47,20 +47,20 @@ jobs:
       - name: Dev Branch
         run: |
           git checkout dev
+          la -a ./_site/website-admin
       - name: Build Dev
         uses: actions/jekyll-build-pages@v1
         with:
           source: ./
           destination: ./_site/website-admin
-      - name: Save and Clean Dev Build
+      - name: Clean Dev Build
         run: |
-          ls -a
-          ls -a ./_site
           ls -a ./_site/website-admin
 
-          #rm ./_site/website-admin/test/home.html
-          #mv ./_site/website-admin/test/index.html ./_site/website-admin/test/home.html
-          #rm -rf ./_site/website-admin/test/website-admin
+          mv ./_site/website-admin/test/index.html ./_site/website-admin/test/home.html
+          rm -rf ./_site/website-admin/website-admin*
+
+          ls -a ./_site/website-admin
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
