@@ -27,14 +27,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Development
-        uses: helaili/jekyll-build@v2
+        uses: helaili/jekyll-action@v2
         with: 
           target_branch: dev
           target_path: /website-admin/test
           jekyll_env: development
           token: ${{ secrets.GITHUB_TOKEN }}  
       - name: Production
-        uses: helaili/jekyll-build@v2
+        uses: helaili/jekyll-action@v2
         with: 
           target_branch: prod
           target_path: /
