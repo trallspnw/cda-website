@@ -10,6 +10,7 @@ runs:
     - name: Setup Pages
       uses: actions/configure-pages@v2
     - name: Prod Branch
+      shell: bash
       run: |
         git fetch
         git checkout prod
@@ -19,6 +20,7 @@ runs:
         source: ./
         destination: ./_site
     - name: Dev Branch
+      shell: bash
       run: |
         git checkout dev
         sed -i -z 's/baseurl: \n/baseurl: \/website-admin\/test\n/g' _config.yml
@@ -31,6 +33,7 @@ runs:
         source: ./
         destination: ./_site/website-admin/test
     - name: Clean Dev Build
+      shell: bash
       run: |
         sudo rm -rf ./_site/website-admin/test/website-admin*
     - name: Upload artifact
