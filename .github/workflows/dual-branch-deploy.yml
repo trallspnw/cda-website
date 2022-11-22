@@ -38,7 +38,8 @@ jobs:
         run: |
           git checkout dev
           sed -i -z 's/baseurl: \n/baseurl: \/website-admin\/test\n/g' _config.yml
-          echo \nConfig for test environment:\n
+          sed -i -z 's/environment: production/environment: development/g' _config.yml
+          echo Config for test environment:
           cat _config.yml
       - name: Build Dev
         uses: actions/jekyll-build-pages@v1
