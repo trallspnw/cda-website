@@ -21,7 +21,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build-and-deploy:
+  # Build job
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -31,9 +32,48 @@ jobs:
           path: vendor/bundle
           key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
           restore-keys: |
-            ${{ runner.os }}-gems-
-      - uses: helaili/jekyll-action@v2    # Choose any one of the Jekyll Actions
-        with:                                # Some relative inputs of your action
-          token: ${{ secrets.PAT }}  
+            ${{ runner.os }}-gems-  
+      #- name: Setup Pages
+      #  uses: actions/configure-pages@v2
+      - name: Prod Branch
+        run: |
+          git fetch
+          git checkout prod
+      - name: Build Prod
+        uses: helaili/jekyll-build@v2
+        with:
+          jekyll_env: production
+          jekyll_src: ./
+          build_only: true
+          build_dir: ./_site
+      - name: Dev Branch
+        run: |
+          git checkout dev
+          rm _config.yml
+          mv _config_dev.yml _config.yml
+      - name: Build Dev
+        uses: helaili/jekyll-build@v2
+        with:
           jekyll_env: development
-          target_branch: dev
+          jekyll_src: ./
+          build_only: true
+          build_dir: ./_site/website-admin/test
+      - name: Clean Dev Build
+        run: |
+          sudo rm -rf ./_site/website-admin/test/website-admin*
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: ./_site
+
+  # Deployment job
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
