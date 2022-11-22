@@ -21,38 +21,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Setup Pages
-        uses: actions/configure-pages@v2
-      - name: Prod Branch
-        run: |
-          git fetch
-          git checkout prod
-      - name: Build Prod
-        uses: actions/jekyll-build-pages@v1
-        with:
-          source: ./
-          destination: ./_site
-      - name: Dev Branch
-        run: |
-          git checkout dev
-          sed -i -z 's/baseurl: \n/baseurl: \/website-admin\/test\n/g' _config.yml
-          sed -i -z 's/environment: production/environment: development/g' _config.yml
-          echo Config for test environment:
-          cat _config.yml
-      - name: Build Dev
-        uses: actions/jekyll-build-pages@v1
-        with:
-          source: ./
-          destination: ./_site/website-admin/test
-      - name: Clean Dev Build
-        run: |
-          sudo rm -rf ./_site/website-admin/test/website-admin*
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: ./_site
+      - name: Build
+        uses: ./.github/actions/dual-branch-build
 
   # Deployment job
   deploy:
