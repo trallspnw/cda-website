@@ -45,6 +45,7 @@ jobs:
           git checkout dev
           sed -i -z 's/baseurl: \n/baseurl: \/website-admin\/test\n/g' _config.yml
           cat _config.yml
+          which jekyll
       - name: Build Dev
         uses: actions/jekyll-build-pages@v1
         with:
