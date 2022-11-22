@@ -21,30 +21,23 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  # Build job
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Setup Pages
-        uses: actions/configure-pages@v2
-      - name: Build
-        run: |
-          sudo ./dual-branch-build.sh
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: ./_site
-
-  # Deployment job
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
+      - name: Development
+        uses: helaili/jekyll-build@v2
+        with: 
+          target_branch: dev
+          target_path: /website-admin/test
+          jekyll_env: development
+          token: ${{ secrets.GITHUB_TOKEN }}  
+      - name: Production
+        uses: helaili/jekyll-build@v2
+        with: 
+          target_branch: prod
+          target_path: /
+          jekyll_env: production
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
