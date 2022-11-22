@@ -44,8 +44,12 @@ jobs:
         uses: helaili/jekyll-action@v2
         with:
           jekyll_env: production
+          jekyll_src: ./
           build_only: true
           build_dir: ./_site
+          pre_build_commands: |
+            pwd
+            ls -a
       - name: Dev Branch
         run: |
           git checkout dev
@@ -55,6 +59,7 @@ jobs:
         uses: helaili/jekyll-action@v2
         with:
           jekyll_env: development
+          jekyll_src: ./
           build_only: true
           build_dir: ./_site/website-admin/test
       - name: Clean Dev Build
