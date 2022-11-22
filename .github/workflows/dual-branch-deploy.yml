@@ -44,6 +44,7 @@ jobs:
           export JEKYLL_ENV=development
           git checkout dev
           sed 's/baseurl:/baseurl: \/website-admin\/test/g' _config.yml
+          cat _config.yml
       - name: Build Dev
         uses: actions/jekyll-build-pages@v1
         with:
