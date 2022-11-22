@@ -43,7 +43,7 @@ jobs:
         run: |
           export JEKYLL_ENV=development
           git checkout dev
-          sed -i 's/#BASEURLPLACEHOLDER/\/website-admin\/test/g' _config.yml
+          sed -i 's/baseurl:\n/baseurl:\/website-admin\/test\n/g' _config.yml
           cat _config.yml
       - name: Build Dev
         uses: actions/jekyll-build-pages@v1
