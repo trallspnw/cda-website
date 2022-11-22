@@ -40,7 +40,7 @@ jobs:
           git fetch
           git checkout prod
       - name: Build Prod
-        uses: helaili/jekyll-build@v2
+        uses: helaili/jekyll-action@v2
         with:
           jekyll_env: production
           jekyll_src: ./
@@ -52,7 +52,7 @@ jobs:
           rm _config.yml
           mv _config_dev.yml _config.yml
       - name: Build Dev
-        uses: helaili/jekyll-build@v2
+        uses: helaili/jekyll-action@v2
         with:
           jekyll_env: development
           jekyll_src: ./
