@@ -27,7 +27,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - uses: actions/cache@v2
+      - name: Cache
+        uses: actions/cache@v2
         with:
           path: vendor/bundle
           key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
@@ -43,7 +44,6 @@ jobs:
         uses: helaili/jekyll-action@v2
         with:
           jekyll_env: production
-          jekyll_src: ./
           build_only: true
           build_dir: ./_site
       - name: Dev Branch
@@ -55,7 +55,6 @@ jobs:
         uses: helaili/jekyll-action@v2
         with:
           jekyll_env: development
-          jekyll_src: ./
           build_only: true
           build_dir: ./_site/website-admin/test
       - name: Clean Dev Build
