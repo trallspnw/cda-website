@@ -26,18 +26,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Development
-        uses: helaili/jekyll-action@v2
-        with: 
-          target_branch: dev
-          target_path: /website-admin/test
-          jekyll_env: development
-          token: ${{ secrets.GITHUB_TOKEN }}  
-      - name: Production
-        uses: helaili/jekyll-action@v2
-        with: 
-          target_branch: prod
-          target_path: /
-          jekyll_env: production
+      - uses: actions/cache@v2
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
+          restore-keys: |
+            ${{ runner.os }}-gems-
+      - uses: helaili/jekyll-action@2.0.5    # Choose any one of the Jekyll Actions
+        with:                                # Some relative inputs of your action
+          token: ${{ secrets.GITHUB_TOKEN }}      
+
+      # Standard usage
+      - uses:  helaili/jekyll-action@v2
+        with:
           token: ${{ secrets.GITHUB_TOKEN }}
       
