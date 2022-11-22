@@ -27,6 +27,7 @@ jobs:
         uses: actions/configure-pages@v2
       - name: Prod Branch
         run: |
+          export JEKYLL_ENV=production
           git fetch
           git checkout prod
       - name: Build Prod
@@ -36,6 +37,7 @@ jobs:
           destination: ./_site
       - name: Dev Branch
         run: |
+          export JEKYLL_ENV=development
           git checkout dev
           rm _config.yml
           mv _config_dev.yml _config.yml
