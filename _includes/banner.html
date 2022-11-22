@@ -1,5 +1,14 @@
 <div class="banner-area">
     <div class="banner-container">
+        {% if jekyll.environment == "development" %}
+            <div class="banner-item banner-test-website">
+                <div class="banner-item-content">
+                    <div class="banner-item-text">
+                        Viewing test website - <a href="/website-admin">Admin Page</a>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
         {% for banner in site.banner %}
             <div class="banner-item">
                 <div class="banner-item-content">
