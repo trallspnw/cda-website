@@ -21,14 +21,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Publish
+      - name: Merge
         uses: devmasx/merge-branch@master
         with:
           type: now
           from_branch: dev
           target_branch: prod
           github_token: ${{ github.token }}
-      - name: Deploy
+      - name: Build
         uses: ./.github/actions/dual-branch-build
 
   # Deployment job
@@ -42,4 +42,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
-        
