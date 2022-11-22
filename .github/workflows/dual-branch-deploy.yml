@@ -34,4 +34,6 @@ jobs:
             ${{ runner.os }}-gems-
       - uses: helaili/jekyll-action@v2    # Choose any one of the Jekyll Actions
         with:                                # Some relative inputs of your action
-          token: ${{ secrets.PAT }}      
+          token: ${{ secrets.PAT }}  
+          jekyll_env: development
+          target_branch: dev
