@@ -31,7 +31,6 @@ description: The Centralia Downtown Association is your family's best source for
   a great stop for your  next adventure!
 baseurl: "#BASEURLPLACEHOLDER"
 url: https://cda.rallspnw.com
-
 permalink: "/:slug"
 markdown: kramdown
 plugins:
