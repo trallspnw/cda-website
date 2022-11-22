@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Install jekyll
-sudo apt-get install ruby-full build-essential zlib1g-dev
+apt-get install ruby-full build-essential zlib1g-dev
 echo '# Install Ruby Gems to ~/gems' >> ~/.bashrc
 echo 'export GEM_HOME="$HOME/gems"' >> ~/.bashrc
 echo 'export PATH="$HOME/gems/bin:$PATH"' >> ~/.bashrc
@@ -19,4 +19,4 @@ sed -i -z 's/baseurl: \n/baseurl: \/website-admin\/test\n/g' _config.yml
 echo \nConfig for test environment:\n
 cat _config.yml
 JEKYLL_ENV=development jekyll build --destination ./_site/website-admin/test
-sudo rm -rf ./_site/website-admin/test/website-admin*
+rm -rf ./_site/website-admin/test/website-admin*
