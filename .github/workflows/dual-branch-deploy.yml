@@ -39,8 +39,6 @@ jobs:
         run: |
           export JEKYLL_ENV=development
           git checkout dev
-          rm _config.yml
-          mv _config_dev.yml _config.yml
       - name: Build Dev
         uses: actions/jekyll-build-pages@v1
         with:
