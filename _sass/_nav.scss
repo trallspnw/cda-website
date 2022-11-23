@@ -107,11 +107,15 @@
     }
 
     .nav-hamburger {
-        display: inline-block;
+        display: none;
         text-align: center;
         padding: 0 20px;
         line-height: 90px;
         flex-basis: min-content;
+
+        &.present {
+            display: inline-block;
+        }
 
         button {
             outline: none;

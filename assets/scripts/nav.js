@@ -15,10 +15,23 @@ export class Nav {
     }
 
     stackNav() {
-        const navMenuWidth = $('.nav-menu').width();
+        let navMenuWidth = $('.nav-menu').width();
+        let items = $('.nav-container .nav-item');
+        let totalWidthOfItems = 0;
         let spaceUsed = 0;
-        $('.nav-container .nav-item').each(function(index) {
+
+        items.each(function(index) {
             $(this).removeClass('in-nav in-hamburger');
+            totalWidthOfItems += this.offsetWidth;
+        });
+
+        $('.nav-hamburger').removeClass('present');
+        if (totalWidthOfItems > navMenuWidth) {
+            $('.nav-hamburger').addClass('present');
+        } 
+        navMenuWidth = $('.nav-menu').width();
+        
+        items.each(function(index) {
             spaceUsed += this.offsetWidth;
             if (spaceUsed <= navMenuWidth) {
                 $(this).addClass('in-nav');
@@ -26,6 +39,6 @@ export class Nav {
                 $(this).addClass('in-hamburger');
                 // sub menu
             }
-        })
+        });
     }
 }
