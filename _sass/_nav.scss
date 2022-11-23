@@ -109,7 +109,6 @@
     .nav-hamburger {
         display: none;
         text-align: center;
-        padding: 0 20px;
         line-height: 90px;
         flex-basis: min-content;
 
@@ -121,15 +120,9 @@
             outline: none;
             background: transparent;
             border: 1px solid transparent;
+            padding: 30px 20px;
+            cursor: pointer;
         }
-    }
-}
-
-.collapsed_nav-container {
-    display: none;
-
-    .nav-item {
-        display: none;
     }
 }
 

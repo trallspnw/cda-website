@@ -1,3 +1,18 @@
-.collapsed_menu {
-    height: 0;
+.collapsed-nav {
+    position: relative;
+}
+
+.collapsed-nav-container {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: lightblue;
+
+    .nav-item {
+        display: none;
+
+        &.in-hamburger {
+            display: block;
+        }
+    }
 }
