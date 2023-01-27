@@ -5,13 +5,14 @@
             {% if content_labels[2] != 'featured' or content_labels.size != 4 %}
                 {% continue %}
             {% endif %}
-            {{content_labels[2]}}
-
-
             <div class="featured-item">
-                {{ homepage-content.featured.content }}
+                {% assign sub_collection_item = content_item.title | remove:" " %}
 
-                {% include content_grid.html grid-id=content_item.title %}
+                {% include content_grid.html 
+                    collection = site.homepage-content 
+                    sub_collection = featured
+                    sub_collection_item = sub_collection_item 
+                %}
 
             </div>
         {% endfor %}
