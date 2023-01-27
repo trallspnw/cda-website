@@ -1,8 +1,18 @@
 <div class="featered-area">
     <div class="featured-container">
-        {% for featured in site.featured %}
+        {% for content_item in site.homepage-content %}
+            {% assign content_labels = content_item.url | split: '/' %}
+            {% if content_labels[2] != 'featured' or content_labels.size != 4 %}
+                {% continue %}
+            {% endif %}
+            {{content_labels[2]}}
+
+
             <div class="featured-item">
-                {{ featured.content }}
+                {{ homepage-content.featured.content }}
+
+                {% include content_grid.html grid-id=content_item.title %}
+
             </div>
         {% endfor %}
     </div>
